@@ -12,16 +12,14 @@ interface MovieRoomDao {
     companion object Constant {
         const val MOVIE_DATABASE_FILE = "movies_room"
         const val MOVIE_TABLE = "movie"
-
         const val ID_COLUMN = "id"
-        const val NAME_COLUMN = "name"
-
-        private const val ANO_LANCAMENTO_COLUMN = "anoLancamento"
-        private const val ESTUDIO_COLUMN = "estudio"
-        private const val DURACAO_COLUMN = "duracao"
-        private const val FLAG_COLUMN = "flag"
-        private const val NOTA_COLUMN = "nota"
-        private const val GENERO_COLUMN = "genero"
+        const val NAME_COLUMN = "nome"
+        const val NOTA_COLUMN = "nota"
+//        const val ANO_LANCAMENTO_COLUMN = "anoLancamento"
+//        const val ESTUDIO_COLUMN = "estudio"
+//        const val DURACAO_COLUMN = "duracao"
+//        const val FLAG_COLUMN = "flag"
+//        const val GENERO_COLUMN = "genero"
     }
 
     @Insert
