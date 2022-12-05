@@ -1,4 +1,7 @@
 package com.example.moviesmanager.view
 
-class MovieActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class MovieActivity : AppCompatActivity() {
+
 }
