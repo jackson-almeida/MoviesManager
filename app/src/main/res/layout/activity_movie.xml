@@ -77,34 +77,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/notaEt" />
 
-    <TextView
-        android:id="@+id/labelAddTv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="Não tem seu gênero? Adicione!"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generoSp" />
-
-    <EditText
-        android:id="@+id/novoGeneroEt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="Novo gênero"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelAddTv" />
-
     <Button
         android:id="@+id/salveBt"
         android:layout_width="150dp"
@@ -115,7 +87,7 @@
         android:layout_marginRight="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/novoGeneroEt" />
+        app:layout_constraintTop_toBottomOf="@+id/generoSp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
