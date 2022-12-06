@@ -15,11 +15,6 @@ interface MovieRoomDao {
         const val ID_COLUMN = "id"
         const val NAME_COLUMN = "nome"
         const val NOTA_COLUMN = "nota"
-//        const val ANO_LANCAMENTO_COLUMN = "anoLancamento"
-//        const val ESTUDIO_COLUMN = "estudio"
-//        const val DURACAO_COLUMN = "duracao"
-//        const val FLAG_COLUMN = "flag"
-//        const val GENERO_COLUMN = "genero"
     }
 
     @Insert

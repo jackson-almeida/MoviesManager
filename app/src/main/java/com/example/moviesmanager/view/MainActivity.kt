@@ -83,18 +83,21 @@ class MainActivity : AppCompatActivity() {
                 carl.launch(Intent(this, MovieActivity::class.java))
                 true
             }
+            R.id.ordenaPorNome -> {
+                movieController.getFilmesPorNome()
+                true
+            }
+            R.id.ordenaPorNota -> {
+                movieController.getFilmesPorNota()
+                true
+            }
             else -> { false }
         }
     }
 
 
-    override fun onCreateContextMenu(
-        menu: ContextMenu?,
-        v: View?,
-        menuInfo: ContextMenu.ContextMenuInfo?
-    ) {
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         menuInflater.inflate(R.menu.context_menu_main, menu)
-
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {

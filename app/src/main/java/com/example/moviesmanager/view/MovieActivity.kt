@@ -72,35 +72,33 @@ class MovieActivity : AppCompatActivity() {
         }
 
         amb.salveBt.setOnClickListener {
-            amb.salveBt.setOnClickListener {
-                // Verifica se o nome está vazio
-                if (amb.nomeEt.text.toString().length.equals(0)) Toast.makeText(this, "Nome inválido", Toast.LENGTH_LONG).show()
+            // Verifica se o nome está vazio
+            if (amb.nomeEt.text.toString().length.equals(0)) Toast.makeText(this, "Nome inválido", Toast.LENGTH_LONG).show()
 
-                // Verifica se a flag foi ativada e se o range da nota dada está entre 0 e 10
-                if(amb.flagJaAssistidoCb.isChecked && (amb.notaEt.text.toString().toInt() < 0 || amb.notaEt.text.toString().toInt() > 10))
-                    Toast.makeText(this,"Essa nota não é válida!", Toast.LENGTH_LONG).show()
+            // Verifica se a flag foi ativada e se o range da nota dada está entre 0 e 10
+            if(amb.flagJaAssistidoCb.isChecked && (amb.notaEt.text.toString().toInt() < 0 || amb.notaEt.text.toString().toInt() > 10))
+                Toast.makeText(this,"Essa nota não é válida!", Toast.LENGTH_LONG).show()
 
-                else {
-                    var campoNota: Int = 0
-                    if (!amb.flagJaAssistidoCb.isChecked ) campoNota = 0
-                    else amb.notaEt.text.toString().toInt()
+            else {
+                var campoNota: Int = 0
+                if (!amb.flagJaAssistidoCb.isChecked ) campoNota = 0
+                else amb.notaEt.text.toString().toInt()
 
-                    val movie = Movie(
-                        id = receivedMovie?.id ?: Random(System.currentTimeMillis()).nextInt(),
-                        nome = amb.nomeEt.text.toString(),
-                        anoLancamento = amb.lancamentoEt.text.toString().toInt(),
-                        estudio = amb.estudioProdutoraEt.text.toString(),
-                        duracao = amb.duracaoEt.text.toString().toInt(),
-                        flag = amb.flagJaAssistidoCb.isChecked,
-                        nota = campoNota,
-                        genero = generoSelecionado
-                    )
+                val movie = Movie(
+                    id = receivedMovie?.id ?: Random(System.currentTimeMillis()).nextInt(),
+                    nome = amb.nomeEt.text.toString(),
+                    anoLancamento = amb.lancamentoEt.text.toString().toInt(),
+                    estudio = amb.estudioProdutoraEt.text.toString(),
+                    duracao = amb.duracaoEt.text.toString().toInt(),
+                    flag = amb.flagJaAssistidoCb.isChecked,
+                    nota = campoNota,
+                    genero = generoSelecionado
+                )
 
-                    val resultIntent = Intent()
-                    resultIntent.putExtra(EXTRA_MOVIE, movie)
-                    setResult(RESULT_OK, resultIntent)
-                    finish()
-                }
+                val resultIntent = Intent()
+                resultIntent.putExtra(EXTRA_MOVIE, movie)
+                setResult(RESULT_OK, resultIntent)
+                finish()
             }
         }
     }

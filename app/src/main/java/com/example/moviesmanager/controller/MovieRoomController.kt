@@ -57,8 +57,8 @@ class MovieRoomController(private val mainActivity: MainActivity) {
         }.start()
     }
 
-    fun getMoviesOrderName() {
-        object: AsyncTask<Unit, Unit, MutableList<Movie>>(){
+    fun getFilmesPorNome() {
+        object: AsyncTask<Unit, Unit, MutableList<Movie>>() {
             override fun doInBackground(vararg params: Unit?): MutableList<Movie> {
                 val returnList = mutableListOf<Movie>()
                 returnList.addAll(movieDaoImpl.getFilmesPorNome())
@@ -67,14 +67,12 @@ class MovieRoomController(private val mainActivity: MainActivity) {
 
             override fun onPostExecute(result: MutableList<Movie>?) {
                 super.onPostExecute(result)
-                if (result != null){
-                    mainActivity.updateMovieList(result)
-                }
+                if (result != null) mainActivity.updateMovieList(result)
             }
         }.execute()
     }
 
-    fun getMoviesOrderGrade()  {
+    fun getFilmesPorNota() {
         object: AsyncTask<Unit, Unit, MutableList<Movie>>(){
             override fun doInBackground(vararg params: Unit?): MutableList<Movie> {
                 val returnList = mutableListOf<Movie>()
