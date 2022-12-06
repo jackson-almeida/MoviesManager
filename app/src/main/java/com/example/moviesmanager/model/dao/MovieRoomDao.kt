@@ -36,4 +36,10 @@ interface MovieRoomDao {
 
     @Delete
     fun deleteMovie(movie: Movie): Int
+
+    @Query("SELECT * FROM $MOVIE_TABLE ORDER BY LOWER($NAME_COLUMN)")
+    fun getFilmesPorNome(): MutableList<Movie>
+
+    @Query("SELECT * FROM $MOVIE_TABLE ORDER BY $NOTA_COLUMN DESC")
+    fun getFilmesPorNota(): MutableList<Movie>
 }
