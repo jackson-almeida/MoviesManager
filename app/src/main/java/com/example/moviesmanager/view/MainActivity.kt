@@ -1,19 +1,23 @@
 package com.example.moviesmanager.view
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
+import android.view.View
+import android.view.Menu
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
+import android.view.MenuItem
+import android.content.Intent
+import android.view.ContextMenu
+import android.widget.AdapterView
 import com.example.moviesmanager.R
-import com.example.moviesmanager.adapter.MovieAdapter
-import com.example.moviesmanager.controller.MovieRoomController
-import com.example.moviesmanager.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moviesmanager.model.entity.Movie
-import com.example.moviesmanager.model.Constant.EXTRA_MOVIE
+import com.example.moviesmanager.adapter.MovieAdapter
+import androidx.activity.result.ActivityResultLauncher
 import com.example.moviesmanager.model.Constant.VIEW_MOVIE
+import com.example.moviesmanager.model.Constant.EXTRA_MOVIE
+import com.example.moviesmanager.controller.MovieRoomController
+import androidx.activity.result.contract.ActivityResultContracts
+import com.example.moviesmanager.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val amb: ActivityMainBinding by lazy {
@@ -65,6 +69,50 @@ class MainActivity : AppCompatActivity() {
             movieIntent.putExtra(EXTRA_MOVIE, movie)
             movieIntent.putExtra(VIEW_MOVIE, true)
             startActivity(movieIntent)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.addMovieMi -> {
+                carl.launch(Intent(this, MovieActivity::class.java))
+                true
+            }
+            else -> { false }
+        }
+    }
+
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        menuInflater.inflate(R.menu.context_menu_main, menu)
+
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        val position = (item.menuInfo as AdapterView.AdapterContextMenuInfo).position
+        val movie = movieList[position]
+        return when(item.itemId) {
+            R.id.removeMovieMi -> {
+                movieController.removeMovie(movie)
+                true
+            }
+            R.id.editMovieMi -> {
+                val movieIntent = Intent(this, MovieActivity::class.java)
+                movieIntent.putExtra(EXTRA_MOVIE, movie)
+                movieIntent.putExtra(VIEW_MOVIE, false)
+                carl.launch(movieIntent)
+                true
+            }
+            else -> { false }
         }
     }
 

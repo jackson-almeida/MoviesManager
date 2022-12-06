@@ -10,6 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f53fa58-de7c-4266-9244-7a5aee400080" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/context_menu_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/moviesmanager/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/moviesmanager/view/MainActivity.kt" afterDir="false" />
     </list>
@@ -47,6 +49,7 @@
         <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
