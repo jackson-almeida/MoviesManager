@@ -77,6 +77,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/notaEt" />
 
+    <EditText
+        android:id="@+id/generoEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint=""
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/salveBt"
         android:layout_width="150dp"
